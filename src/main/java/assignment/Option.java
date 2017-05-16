@@ -1,6 +1,7 @@
 package assignment;
 
 import java.util.function.Function;
+import java.util.function.Supplier;
 
 /**
  * An optional value.
@@ -10,5 +11,5 @@ public interface Option<T> {
 	/**
 	 * Visits the optional value.
 	 */
-	<U> U visit(Producer<U> onNone, Function<T, U> onSome);
+	<U> U visit(Supplier<U> onNone, Function<T, U> onSome);
 }

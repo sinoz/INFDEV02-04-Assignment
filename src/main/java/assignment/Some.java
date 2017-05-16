@@ -1,6 +1,7 @@
 package assignment;
 
 import java.util.function.Function;
+import java.util.function.Supplier;
 
 /**
  * An {@link Option} container that contains a value and can transform the contained
@@ -21,7 +22,7 @@ public final class Some<T> implements Option<T> {
 	}
 
 	@Override
-	public <U> U visit(Producer<U> onNone, Function<T, U> onSome) {
+	public <U> U visit(Supplier<U> onNone, Function<T, U> onSome) {
 		return onSome.apply(value);
 	}
 }
